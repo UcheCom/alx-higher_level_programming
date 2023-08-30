@@ -9,7 +9,7 @@ class Square:
         Ags:
             size(int): The size of the new square.
         """
-        self.__size = size
+        self.size = size
 
         @ property
         def size(self):
@@ -34,5 +34,5 @@ class Square:
                 [print("#", end="") for j in range(self.__size)]
                 print("")
 
-            if self.--size == 0:
+            if self.__size == 0:
                 print("")
