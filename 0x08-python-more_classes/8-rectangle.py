@@ -1,11 +1,21 @@
 #!/usr/bin/python3
-"""File 3-rectangle
+"""File 7-rectangle
 Defines a Rectangle class.
 """
 
 
 class Rectangle:
-    """Rectangle class defined by width and height."""
+    """Rectangle class defined by width and height.
+
+    Attributes:
+        number_of_instances: number of Rectangle instances,
+        increments with every instantitation,
+        decrements with every deletion
+
+    """
+
+    number_of_instances = 0
+    print_symbol = '#'
 
     def __init__(self, width=0, height=0):
         """Initializes a Rectangle instance.
@@ -16,6 +26,7 @@ class Rectangle:
         """
         self.width = width
         self.height = height
+        Rectangle.number_of_instances += 1
 
     @property
     def width(self):
@@ -84,3 +95,35 @@ class Rectangle:
                 rect += '#'
             rect += '\n'
         return (rect[:-1])
+
+    def __repr__(self):
+        """Return a string representation of a Rectangle instance
+        that  recreates a new instance by using eval().
+        """
+        return ("Rectangle({}, {})".format(self.__width, self.__height))
+
+    def __del__(self):
+        """Deletes a Rectangle instance."""
+        print("Bye rectangle...")
+        Rectangle.number_of_instances -= 1
+
+    @staticmethod
+    def bigger_or_equal(rect_1, rect_2):
+        """ This finds the biggest Rectangle based on the area
+
+        Args:
+            rect_1: Rectangle instance 1
+            rect_2: Rectangle instance 2
+
+        Returns:
+            The instance with the biggest area,
+            or rect_1 if both rectangles have the same area
+        """
+        if not isinstance(rect_1, Rectangle):
+            raise TypeError("rect_1 must be an instance of Rectangle")
+        if not isinstance(rect_2, Rectangle):
+            raise TypeError("rect_2 must be an instance of Rectangle")
+        if rect_1.area() == rect_2.area() or rect_1.area() > rect_2.area():
+            return (rect_1)
+        if rect_1.area() < rect_2.area():
+            return (rect_2)

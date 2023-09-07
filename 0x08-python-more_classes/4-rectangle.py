@@ -79,13 +79,15 @@ class Rectangle:
             return ""
 
         rect = ""
+
         for i in range(self.__height):
             for j in range(self.__width):
                 rect += '#'
-            rect += '\n'
+                rect += '\n'
+
         return (rect[:-1])
 
-     def __repr__(self):
+    def __repr__(self):
         """Return a string representation of a Rectangle instance
         that  recreates a new instance by using eval().
         """

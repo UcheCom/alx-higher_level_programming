@@ -6,7 +6,7 @@ Defines a Rectangle class.
 
 class Rectangle:
     """Rectangle class defined by width and height.
-     
+
     Attributes:
         number_of_instances: number of Rectangle instances,
         increments with every instantitation,
@@ -93,13 +93,13 @@ class Rectangle:
             rect += '\n'
         return (rect[:-1])
 
-     def __repr__(self):
+    def __repr__(self):
         """Return a string representation of a Rectangle instance
         that  recreates a new instance by using eval().
         """
-        return ("Rectangle({}, {})".format(self.__width, self.__height)
+        return ("Rectangle({}, {})".format(self.__width, self.__height))
 
-     def __del__(self):
+    def __del__(self):
         """Deletes a Rectangle instance."""
         print("Bye rectangle...")
-        Rectangle.number_of_instances -= 1)
+        Rectangle.number_of_instances -= 1
