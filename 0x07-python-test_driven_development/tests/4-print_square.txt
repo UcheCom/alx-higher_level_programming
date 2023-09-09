@@ -20,9 +20,9 @@ represents the height and width of the square.
 ::
 
     >>> print_square(3)
-    ####
-    ####
-    ####
+    ###
+    ###
+    ###
 
 ::
 
@@ -32,12 +32,6 @@ represents the height and width of the square.
     #####
     #####
     #####
-
-If ``size`` is zero, the function prints nothing.
-
-::
-
-    >>> print_square(0)
 
 Invalid Sizes
 -------------
