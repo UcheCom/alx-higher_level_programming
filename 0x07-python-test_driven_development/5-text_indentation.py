@@ -22,6 +22,6 @@ def text_indentation(text):
 
     for delm in ".:?":
         text = (delm + "\n\n").join(
-            [line.strip(" ") for line in text.split(delim)])
+            [line.strip(" ") for line in text.split(delm)])
 
     print("{}".format(text), end="")
