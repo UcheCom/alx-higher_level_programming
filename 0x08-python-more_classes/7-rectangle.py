@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-"""File 7-rectangle
-Defines a Rectangle class.
+"""File 7-rectangle defines a Rectangle class.
 """
 
 
@@ -8,8 +7,9 @@ class Rectangle:
     """Rectangle class defined by width and height.
 
     Attributes:
-        number_of_instances: number of Rectangle instances,
-        increments with every instantitation,
+        print_symbol: any type (public)
+        number_of_instances: number of Rectangle instances(public)
+        increments with every instantiation,
         decrements with every deletion
 
     """
@@ -31,7 +31,7 @@ class Rectangle:
     @property
     def width(self):
         """This retrieves the width of a Rectangle instance."""
-        return self.__width
+        return (self.__width)
 
     @width.setter
     def width(self, value):
@@ -49,7 +49,7 @@ class Rectangle:
     @property
     def height(self):
         """This retrieves the height of a Rectangle instance."""
-        return self.__height
+        return (self.__height)
 
     @height.setter
     def height(self, value):
@@ -70,7 +70,7 @@ class Rectangle:
         Returns:
             Area of the the rectangle, given by height * width
         """
-        return self.__width * self.__height
+        return (self.__width * self.__height)
 
     def perimeter(self):
         """This calculates the perimeter of a Rectangle instance
@@ -86,14 +86,13 @@ class Rectangle:
         """Returns the string representation of a Rectangle instance,
         filled with the '#' character.
         """
-        if self.__height == 0 or self.__width == 0:
-            return ""
-
+        
         rect = ""
+
+        if self.__height == 0 or self.__width == 0:
+            return (rect)
         for i in range(self.__height):
-            for j in range(self.__width):
-                rect += '#'
-            rect += '\n'
+            rect += str(self.print_symbol) * self.__width + '\n'
         return (rect[:-1])
 
     def __repr__(self):
@@ -104,5 +103,6 @@ class Rectangle:
 
     def __del__(self):
         """Deletes a Rectangle instance."""
+
         print("Bye rectangle...")
         Rectangle.number_of_instances -= 1
