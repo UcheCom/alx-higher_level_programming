@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-"""File 6-rectangle
-Defines a Rectangle class.
+"""File 6-rectangle defines a Rectangle class.
 """
 
 
@@ -8,11 +7,15 @@ class Rectangle:
     """Rectangle class defined by width and height.
 
     Attributes:
-        number_of_instances: number of Rectangle instances,
-        increments with every instantitation,
+        number_of_instances: number of Rectangle instances(Public)
+        increments with every instantiation,
         decrements with every deletion
+        width: positive integer (private)
+        height: positive integer (private)
 
     """
+
+    number_of_instances = 0
 
     def __init__(self, width=0, height=0):
         """Initializes a Rectangle instance.
@@ -28,7 +31,7 @@ class Rectangle:
     @property
     def width(self):
         """This retrieves the width of a Rectangle instance."""
-        return self.__width
+        return (self.__width)
 
     @width.setter
     def width(self, value):
@@ -67,7 +70,7 @@ class Rectangle:
         Returns:
             Area of the the rectangle, given by height * width
         """
-        return self.__width * self.__height
+        return (self.__width * self.__height)
 
     def perimeter(self):
         """This calculates the perimeter of a Rectangle instance
@@ -76,21 +79,21 @@ class Rectangle:
             Perimeter of the rectangle, given by 2 * (height + width)
         """
         if self.__height == 0 or self.__width == 0:
-            return 0
+            return (0)
         return (2 * (self.__width + self.__height))
 
     def __str__(self):
         """Returns the string representation of a Rectangle instance,
         filled with the '#' character.
         """
-        if self.__height == 0 or self.__width == 0:
-            return ""
 
         rect = ""
+
+        if self.__height == 0 or self.__width == 0:
+            return (rect)
         for i in range(self.__height):
-            for j in range(self.__width):
-                rect += '#'
-            rect += '\n'
+            rect += "#" * self.__width + '\n'
+
         return (rect[:-1])
 
     def __repr__(self):
@@ -101,5 +104,6 @@ class Rectangle:
 
     def __del__(self):
         """Deletes a Rectangle instance."""
+
         print("Bye rectangle...")
         Rectangle.number_of_instances -= 1
