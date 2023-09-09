@@ -75,15 +75,13 @@ class Rectangle:
         """Returns the string representation of a Rectangle instance,
         filled with the '#' character.
         """
-        if self.__height == 0 or self.__width == 0:
-            return ""
 
         rect = ""
 
+        if self.__height == 0 or self.width == 0:
+            return (rect)
         for i in range(self.__height):
-            for j in range(self.__width):
-                rect += '#'
-                rect += '\n'
+            rect += "#" * self.__width + '\n'
 
         return (rect[:-1])
 
