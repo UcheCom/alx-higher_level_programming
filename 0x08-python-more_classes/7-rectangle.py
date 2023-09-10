@@ -15,7 +15,7 @@ class Rectangle:
     """
 
     number_of_instances = 0
-    print_symbol = '#'
+    print_symbol = "#"
 
     def __init__(self, width=0, height=0):
         """Initializes a Rectangle instance.
@@ -86,13 +86,14 @@ class Rectangle:
         """Returns the string representation of a Rectangle instance,
         filled with the '#' character.
         """
-        
+
         rect = ""
 
         if self.__height == 0 or self.__width == 0:
             return (rect)
         for i in range(self.__height):
             rect += str(self.print_symbol) * self.__width + '\n'
+
         return (rect[:-1])
 
     def __repr__(self):
