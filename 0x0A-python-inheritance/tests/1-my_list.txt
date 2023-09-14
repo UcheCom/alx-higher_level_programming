@@ -1,0 +1,78 @@
+The `1-my_list.py` module
+-------------------------
+
+This defines a class that inheritsfrom list
+class with a public class method
+
+Use Cases:
+
+1. importing `MyList` class from module:
+   >>> MyList = __import__('1-my_list').MyList
+
+2. Checks that MyList is an instance of list:
+   >>> my_list = MyList()
+   >>> isinstance(my_list, list)
+   True
+
+3. Checks that an instance of MyList is of type MyList:
+   >>> my_list = MyList()
+   >>> type(my_list) == MyList
+   True
+
+4. Checks that MyList is a subclass of list:
+   >>> issubclass(MyList, list)
+   True
+
+5. check the type of print_sorted:
+   >>> my_list = MyList()
+   >>> type(my_list.print_sorted)
+   <class 'method'>
+
+6. define a new instance of the class and appending value:
+   >>> my_list = MyList()
+   >>> my_list.append(1)
+   >>> my_list.append(4)
+   >>> my_list.append(2)
+   >>> print(my_list)
+   [1, 4, 2]
+
+   >>> my_list.print_sorted()
+   [1, 2, 4]
+
+7. Case of repeated values:
+   >>> my_list = MyList()
+   >>> my_list.append(1)
+   >>> my_list += [1, 2, 2]
+   >>> my_list.print_sorted()
+   [1, 1, 2, 2]
+
+8. Case of unique value:
+   >>> my_list = MyList()
+   >>> my_list.append(2)
+   >>> my_list.print_sorted()
+   [2]
+
+9. Case of empty list:
+   >>> my_list = MyList()
+   >>> my_list.print_sorted()
+   []
+
+10. Case of negative and positive values:
+   >>> my_list = MyList()
+   >>> my_list += [2, -3, 3, -4]
+   >>> my_list.print_sorted()
+   [-4, -3, 2, 3]
+
+11. Calling print_sorted class method with argument:
+    >>> my_list = MyList()
+    >>> my_list.print_sorted([1, 2, 3])
+    Traceback (most recent call last):
+    	      ...
+    TypeError: print_sorted() takes 1 positional argument but 2 were given
+
+12. Calling 2 arguments:
+    >>> my_list = MyList()
+    >>> my_list.print_sorted([1, 2], [3, 4])
+    Traceback (most recent call last):
+    	      ...
+    TypeError: print_sorted() takes 1 positional argument but 3 were given
