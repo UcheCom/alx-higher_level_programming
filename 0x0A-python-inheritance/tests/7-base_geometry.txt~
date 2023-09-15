@@ -56,7 +56,14 @@ Use Cases:
    	     ...
    TypeError: string must be an integer
 
-10. Case of None:
+9. Calling with 1 argument:
+   >>> bg = BaseGeometry()
+   >>> bg.integer_validator("string")
+   Traceback (most recent call last):
+   	     ...
+   TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+11. Case of None:
     >>> bg = BaseGeometry()
     >>> bg.integer_validator("string", None)
     Traceback (most recent call last):
