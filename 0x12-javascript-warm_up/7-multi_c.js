@@ -1,10 +1,10 @@
 #!/usr/bin/node
 
 const x = process.argv[2];
-const num_count = parseInt(x);
+const numcount = parseInt(x);
 
-if (!isNaN(num_count)) {
-  for (let i = 0; i < num_count; i++) {
+if (!isNaN(numcount)) {
+  for (let i = 0; i < numcount; i++) {
     console.log('C is fun');
   }
 } else {
