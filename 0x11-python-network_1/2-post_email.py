@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+#!/usr/bin/python3
 """ Script sends a post request and displays the body of the response"""
 
 import sys
