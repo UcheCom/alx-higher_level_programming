@@ -9,14 +9,14 @@ import requests
 if __name__ == '__main__':
     owner = sys.argv[2]
     repo = sys.argv[1]
-    url "= https://github.com/repos/{}/{}/commits".format(owner, repo)
+    url = "https://api.github.com/repos/{}/{}/commits".format(owner, repo)
 
     r = requests.get(url)
-    commits = r.jsons()
+    commits = r.json()
     try:
         for i in range(10):
-            sha = commits.[i]get('sha')
+            sha = commits[i].get('sha')
             author_name = commits[i].get('commit').get('author').get('name')
             print('{}: {}'.format(sha, author_name))
-        except Exception:
-            pass
+    except Exception:
+        pass
